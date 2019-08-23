@@ -36,6 +36,7 @@ const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 const Kanban = React.lazy(() => import('./views/Kanban/Kanban'));
+const Timetracker = React.lazy(() => import('./views/Timetracker/Timetracker'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -81,6 +82,7 @@ const routes = [
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/kanban', exact: true, name: 'Kanban', component: Kanban },
+  { path: '/timetracker', exact: true, name: 'Timetracker', component: Timetracker },
 ];
 
 export default routes;

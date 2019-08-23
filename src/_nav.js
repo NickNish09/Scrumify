@@ -20,11 +20,6 @@ export default {
       icon: 'icon-list',
     },
     {
-      name: 'Typography',
-      url: '/theme/typography',
-      icon: 'icon-pencil',
-    },
-    {
       title: true,
       name: 'Horas',
       wrapper: {
@@ -33,7 +28,12 @@ export default {
       },
     },
     {
-      name: 'Time Tracker',
+      name: 'Timetracker',
+      url: '/timetracker',
+      icon: 'icon-pencil',
+    },
+    {
+      name: 'Dropdown',
       url: '/base',
       icon: 'icon-puzzle',
       children: [
