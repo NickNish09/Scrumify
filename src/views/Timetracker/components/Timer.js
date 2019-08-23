@@ -10,6 +10,12 @@ const Timer = () => {
   const [time, setTime] = useState('00:00');
 
   function onTimeChange(time) {
+    let time_array = time.split(":");
+    setSeconds(parseInt(time_array[2]) + 1);
+    setMinutes(parseInt(time_array[1]));
+    setHours(parseInt(time_array[0]));
+    console.log(time_array);
+
     setTime(time);
   }
 
