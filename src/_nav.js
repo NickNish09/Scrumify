@@ -16,7 +16,7 @@ export default {
     },
     {
       name: 'Kanban',
-      url: '/theme/colors',
+      url: '/kanban',
       icon: 'icon-list',
     },
     {
