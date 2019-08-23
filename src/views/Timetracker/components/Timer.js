@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TimeField from 'react-simple-timefield';
 import DivFlex from '../../../components/DivFlex';
+import DivFlexMargin from "../../../components/DivFlexMargin";
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(1);
@@ -24,6 +25,10 @@ const Timer = () => {
   }
 
   function reset() {
+    // Tem o valor do timer quando para
+    console.log(time);
+
+    setTime('00:00:00');
     setSeconds(0);
     setIsActive(false);
   }
@@ -64,21 +69,20 @@ const Timer = () => {
       <TimeField
         value={time}
         onChange={onTimeChange}
-        style={{marginRight: 20, marginLeft: 20, width: 100}}
         showSeconds={true}
-        input={<input type="text" className="form-control text-center"/>}
+        input={<input type="text" className="form-control text-center margin-horizontal"/>}
       />
       <div className="row">
         {isActive ?
-          <div>
-            <button className={"btn btn-warning"} onClick={toggle}>
+          <DivFlexMargin>
+            <button className={"btn btn-warning"} onClick={toggle} style={{marginRight: 5}}>
               Pause
             </button>
             <button className="btn btn-danger" onClick={reset}>
               Stop
             </button>
-          </div> :
-          <button className={"btn btn-primary"} onClick={toggle}>
+          </DivFlexMargin> :
+          <button className={"btn btn-primary padding-btn"} onClick={toggle}>
             Start
           </button>
         }
