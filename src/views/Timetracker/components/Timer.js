@@ -10,6 +10,11 @@ const Timer = (props) => {
   const [isActive, setIsActive] = useState(false);
   const [time, setTime] = useState('00:00');
 
+  function updateTime(time) {
+    setTime(time);
+    props.onChange(time);
+  }
+
   function onTimeChange(time) {
     let time_array = time.split(":");
     setSeconds(parseInt(time_array[2]) + 1);
@@ -17,7 +22,7 @@ const Timer = (props) => {
     setHours(parseInt(time_array[0]));
     console.log(time_array);
 
-    setTime(time);
+    updateTime(time);
   }
 
   function toggle() {
@@ -26,10 +31,9 @@ const Timer = (props) => {
 
   function reset() {
     // Tem o valor do timer quando para
-    props.onChange(time);
-    console.log(time);
+    props.getData();
 
-    setTime('00:00:00');
+    updateTime('00:00:00');
     setSeconds(0);
     setIsActive(false);
   }
@@ -56,7 +60,7 @@ const Timer = (props) => {
         } else {
           s = seconds;
         }
-        setTime(`${h}:${m}:${s}`);
+        updateTime(`${h}:${m}:${s}`);
         setSeconds(seconds => seconds + 1);
       }, 1000);
     } else if (!isActive && seconds !== 0) {
