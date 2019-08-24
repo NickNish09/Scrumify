@@ -7,8 +7,6 @@ export default class TagInput extends React.Component {
 
     this.state = {
       tags: [
-        { id: 1, name: "Apples" },
-        { id: 2, name: "Pears" }
       ],
       suggestions: [
         { id: 3, name: "Bananas" },
@@ -20,14 +18,17 @@ export default class TagInput extends React.Component {
   }
 
   onDelete (i) {
-    const tags = this.state.tags.slice(0)
-    tags.splice(i, 1)
-    this.setState({ tags })
+    const tags = this.state.tags.slice(0);
+    tags.splice(i, 1);
+    this.setState({ tags });
+    this.props.onChange(tags);
   }
 
   onAddition (tag) {
-    const tags = [].concat(this.state.tags, tag)
-    this.setState({ tags })
+    const tags = [].concat(this.state.tags, tag);
+    this.setState({ tags });
+    this.props.onChange(tags);
+    console.log(tags);
   }
 
   render () {

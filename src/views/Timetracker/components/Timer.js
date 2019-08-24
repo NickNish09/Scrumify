@@ -3,7 +3,7 @@ import TimeField from 'react-simple-timefield';
 import DivFlex from '../../../components/DivFlex';
 import DivFlexMargin from "../../../components/DivFlexMargin";
 
-const Timer = () => {
+const Timer = (props) => {
   const [seconds, setSeconds] = useState(1);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
@@ -26,6 +26,7 @@ const Timer = () => {
 
   function reset() {
     // Tem o valor do timer quando para
+    props.onChange(time);
     console.log(time);
 
     setTime('00:00:00');
