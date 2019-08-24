@@ -34,6 +34,7 @@
     "react-router-config": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-simple-timefield": "^2.0.3",
+    "react-tag-autocomplete": "^6.0.0-beta.1",
     "react-test-renderer": "^16.8.6",
     "react-trello": "^2.2.3",
     "reactstrap": "^8.0.0",

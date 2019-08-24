@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import DivFlex from '../../../components/DivFlex';
 import Timer from "./Timer";
+import TagInput from "./TagInput";
 
 function InputBar() {
   // Declare uma nova variável de state, a qual chamaremos de "count"
@@ -12,6 +13,7 @@ function InputBar() {
           <input type="text" name="timeentry" className={'form-control'}/>
           <Timer/>
         </DivFlex>
+        <TagInput/>
       </div>
     </div>
   );
