@@ -32,8 +32,7 @@ const Timer = (props) => {
   function reset() {
     // Tem o valor do timer quando para
     props.getData();
-
-    updateTime('00:00:00');
+    updateTime('00:00');
     setSeconds(0);
     setIsActive(false);
   }
@@ -81,10 +80,10 @@ const Timer = (props) => {
         {isActive ?
           <DivFlexMargin>
             <button className={"btn btn-warning"} onClick={toggle} style={{marginRight: 5}}>
-              Pause
+              <i className="fa fa-pause"></i>
             </button>
             <button className="btn btn-danger" onClick={reset}>
-              Stop
+              <i className="fa fa-stop"></i>
             </button>
           </DivFlexMargin> :
           <button className={"btn btn-primary padding-btn"} onClick={toggle}>
